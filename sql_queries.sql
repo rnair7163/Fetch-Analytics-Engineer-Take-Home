@@ -60,11 +60,11 @@ with base as (
     select rewardsReceiptStatus,
            totalSpent
     from receipts_updated 
-    where rewardsReceiptStatus in ('Finished', 'Rejected')
+    where rewardsReceiptStatus in ('FINISHED', 'REJECTED')
 )
 
-select avg(case when rewardsReceiptStatus = 'Finished' then totalSpent end) as average_accepted_spend,
-       avg(case when rewardsReceiptStatus = 'Rejected' then totalSpent end) as average_rejected_spend
+select avg(case when rewardsReceiptStatus = 'FINISHED' then totalSpent end) as average_accepted_spend,
+       avg(case when rewardsReceiptStatus = 'REJECTED' then totalSpent end) as average_rejected_spend
 from base 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -78,11 +78,11 @@ with base as (
     select rewardsReceiptStatus,
            purchasedItemCount
     from receipts_updated 
-    where rewardsReceiptStatus in ('Finished', 'Rejected')
+    where rewardsReceiptStatus in ('FINISHED', 'REJECTED')
 )
 
-select sum(case when rewardsReceiptStatus = 'Finished' then purchasedItemCount end) as average_accepted_spend,
-       sum(case when rewardsReceiptStatus = 'Rejected' then purchasedItemCount end) as average_rejected_spend
+select sum(case when rewardsReceiptStatus = 'FINISHED' then purchasedItemCount end) as average_accepted_spend,
+       sum(case when rewardsReceiptStatus = 'REJECTED' then purchasedItemCount end) as average_rejected_spend
 from base 
 ----------------------------------------------------------------------------------------------------------------
 
