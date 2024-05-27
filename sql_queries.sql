@@ -7,7 +7,7 @@ with base as (
     select b.brandCode,
            to_char(r.dateScanned, 'YYYY-MM') as year_month,
            count(r.id) as receipts_scanned_count,
-           dense_rank() over(order by to_char(r.dateScanned, 'YYYY-MM')desc, count(r.id) desc) as rnk
+           dense_rank() over(order by to_char(r.dateScanned, 'YYYY-MM') desc, count(r.id) desc) as rnk
     from brands as b
     join receipts_items_list as ril 
       on b.brandCode = ril.brandCode
