@@ -25,8 +25,28 @@ where rnk <= 5
 
 /*
  Question 2 - How does the ranking of the top 5 brands by receipts scanned for the recent month compare to the ranking for the previous month?
+
+ Following query gives us top 5 brands from the previous month. We can use the output from this query and compare it with the output from the 
+ first query to see how much the ranking has changed.
 */
 
+with base as (
+    select ril.brandCode,
+           to_char(r.dateScanned, 'YYYY-MM') as year_month,
+           count(r.id) as receipts_scanned_count,
+           dense_rank() over(order by to_char(r.dateScanned, 'YYYY-MM') desc, count(r.id) desc) as rnk
+    from receipts_items_list as ril 
+    join receipts_updated as r 
+      on ril.receipt_id = r.id
+    where extract(day from now() - r.dateScanned) between 30 and 60
+      and ril.brandCode is not null
+    group by ril.brandCode,
+             to_char(r.dateScanned, 'YYYY-MM') as year_month
+)
+
+select brandCode
+from base 
+where rnk <= 5
 ----------------------------------------------------------------------------------------------------------------
 
 /*
