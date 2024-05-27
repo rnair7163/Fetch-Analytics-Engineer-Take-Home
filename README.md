@@ -3,10 +3,10 @@ In this repo, I will go through each of the requirements and provide links where
 
 ## Task 1 - Review unstructured JSON data and diagram a new structured relational data model
 Based on the data exploration performed, I created a relational data model with 4 datasets:-
-- users
-- receipts
-- brands
-- receipts_items_list
+- `users`
+- `receipts`
+- `brands`
+- `receipts_items_list`
 
 All the Data Exploration methodologies can be viewed in this [file](https://github.com/rnair7163/Fetch-Analytics-Engineer-Take-Home/blob/main/Data-Exploration_and_Cleaning.ipynb).
 
