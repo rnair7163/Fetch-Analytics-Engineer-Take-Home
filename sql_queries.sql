@@ -65,3 +65,42 @@ select sum(case when rewardsReceiptStatus = 'Finished' then purchasedItemCount e
        sum(case when rewardsReceiptStatus = 'Rejected' then purchasedItemCount end) as average_rejected_spend
 from base 
 ----------------------------------------------------------------------------------------------------------------
+
+/*
+ Question 5 - Which brand has the most spend among users who were created within the past 6 months?
+*/
+
+with user_info as (
+    select r.userId,
+           r.id
+    from receipts_updated as r 
+    join users_updated as u on r.userId = u.id 
+    where extract(month from now() - u.createdDate) <= 6
+)
+
+select ril.brandCode,
+       sum(itemPrice * quantityPurchased) as total_spend
+from receipts_items_list ril
+join user_info on ril.receipt_id = user_info.id 
+group by ril.brandCode
+order by sum(itemPrice * quantityPurchased) desc
+----------------------------------------------------------------------------------------------------------------
+
+/*
+ Question 6 - Which brand has the most transactions among users who were created within the past 6 months?
+*/
+
+with user_info as (
+    select r.userId,
+           r.id
+    from receipts_updated as r 
+    join users_updated as u on r.userId = u.id 
+    where extract(month from now() - u.createdDate) <= 6
+)
+
+select ril.brandCode,
+       sum(quantityPurchased) as total_transactions
+from receipts_items_list ril
+join user_info on ril.receipt_id = user_info.id 
+group by ril.brandCode
+order by sum(quantityPurchased) desc
