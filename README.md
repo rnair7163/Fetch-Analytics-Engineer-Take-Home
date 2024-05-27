@@ -28,6 +28,5 @@ Few more data quality issues were noticed after building out the new relational 
 - There are lot of nulls in the 'brandCode' columnof brands dataset. This will hinder queries when joining these 2 datasets are needed.
 
 ## Task 4 - Write a short email or Slack message to the business stakeholder
-
-
+Here is the [PDF file](https://github.com/rnair7163/Fetch-Analytics-Engineer-Take-Home/blob/main/Email_To_Stakeholder.pdf) with the email written to the stakeholder. In this, I added the inconsistencies I found in the dataset while performing data quality analysis and building out the new relational model. 
 
