@@ -31,10 +31,10 @@ where rnk <= 5
 
 /*
  Question 3 - When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
-*/
 
--- During the data exploration, I noticed there is no record available for rewardsReceiptStatus = 'Acepted'. This is a data quality issue or 
--- which might need to be addressed but for now, I am going with the assumption that Accepted in this case means Finished.
+During the data exploration, I noticed there is no record available for rewardsReceiptStatus = 'Acepted'. This is a data quality issue or 
+which might need to be addressed but for now, I am going with the assumption that Accepted in this case means Finished.
+*/
 
 with base as (
     select rewardsReceiptStatus,
@@ -50,9 +50,9 @@ from base
 
 /*
  Question 4 - When considering total number of items purchased from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
+ 
+ Just like question 3, I am going with the assumption that Accepted in this case means Finished.
 */
-
--- Just like question 3, I am going with the assumption that Accepted in this case means Finished.
 
 with base as (
     select rewardsReceiptStatus,
