@@ -52,7 +52,7 @@ where rnk <= 5
 /*
  Question 3 - When considering average spend from receipts with 'rewardsReceiptStatus’ of ‘Accepted’ or ‘Rejected’, which is greater?
 
-During the data exploration, I noticed there is no record available for rewardsReceiptStatus = 'Acepted'. This is a data quality issue or 
+During the data exploration, I noticed there is no record available for rewardsReceiptStatus = 'Acepted'. This could be a data quality issue
 which might need to be addressed but for now, I am going with the assumption that Accepted in this case means Finished.
 */
 
