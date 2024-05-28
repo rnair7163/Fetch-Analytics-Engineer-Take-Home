@@ -1,4 +1,7 @@
--- For SQL query exercise, I am using PostgreSQL.
+/*
+Task 2 - Generate a query that answers a predetermined business question
+For SQL query exercise, I am using PostgreSQL.
+*/
 
 /*
  Question 1 - What are the top 5 brands by receipts scanned for most recent month?
