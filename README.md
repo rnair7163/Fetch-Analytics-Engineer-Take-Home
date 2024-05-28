@@ -15,7 +15,7 @@ Here is the ER Diagram:
 ![ER_Diagram](https://github.com/rnair7163/Fetch-Analytics-Engineer-Take-Home/assets/14351816/59e4ab9f-87fb-459d-a708-391551d8a74d)
 
 ## Task 2 - Generate a query that answers a predetermined business question 
-All the queries are added in this [file](https://github.com/rnair7163/Fetch-Analytics-Engineer-Take-Home/blob/main/sql_queries.sql).
+All the queries are added in this [file](https://github.com/rnair7163/Fetch-Analytics-Engineer-Take-Home/blob/main/sql_queries.sql). For this exercise, I have used PostgreSQL.
 
 ## Task 3 - Generate a query to capture data quality issues against the new structured relational data model
 Few of the data quality issues were addressed while working on the [new relational data model](https://github.com/rnair7163/Fetch-Analytics-Engineer-Take-Home/blob/main/Data-Exploration_and_Cleaning.ipynb) such as:-
